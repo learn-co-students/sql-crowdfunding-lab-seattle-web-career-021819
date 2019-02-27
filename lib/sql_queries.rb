@@ -6,6 +6,7 @@
 
 # Make sure each ruby method returns a string containing a valid SQL statement.
 
+#selects teh titles of all projects and their pledge amount alphabetized by name
 def selects_the_titles_of_all_projects_and_their_pledge_amounts_alphabetized_by_name
  "SELECT projects.title, SUM(pledges.amount)
  FROM projects
@@ -29,8 +30,7 @@ FROM projects
 JOIN pledges ON pledges.project_id = projects.id
 GROUP BY title
 HAVING OVER >= 0
-ORDER BY projects.title
-ASC;"
+ORDER BY projects.title ASC;"
 end
 
 def selects_user_names_and_amounts_of_all_pledges_grouped_by_name_then_orders_them_by_the_amount_and_users_name
